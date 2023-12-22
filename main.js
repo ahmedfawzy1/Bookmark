@@ -99,12 +99,13 @@ function deleteAll() {
 
 function visitBookmark(indexUrl) {
   var bookmarkUrl = bookmarkContainer[indexUrl].url;
-  var domain = bookmarkUrl.replace(/^https?:\/\//, "");
-  var fullUrl = `https://${domain}`;
-  console.log(domain);
+  var path = bookmarkUrl.replace(/^https?:\/\/[^\/]+/, "");
+  var fullUrl = `https://ahmedfaw.github.io/${path}`;
+  console.log(path);
   console.log(bookmarkUrl);
   window.open(fullUrl, "_blank");
 }
+
 
 function validteNameBookmark(name) {
   var nameRegex = /^\w{3,}(\s+\w+)*$/;

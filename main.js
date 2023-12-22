@@ -100,7 +100,7 @@ function deleteAll() {
 function visitBookmark(indexUrl) {
   var bookmarkUrl = bookmarkContainer[indexUrl].url;
   var domain = bookmarkUrl.replace(/^https?:\/\//, "");
-  var fullUrl = `https:\\${domain}`;
+  var fullUrl = `https://${domain}`;
   console.log(domain);
   console.log(bookmarkUrl);
   window.open(fullUrl, "_blank");

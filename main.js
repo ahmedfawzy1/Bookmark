@@ -99,9 +99,9 @@ function deleteAll() {
 
 function visitBookmark(indexUrl) {
   var bookmarkUrl = bookmarkContainer[indexUrl].url;
-  var path = bookmarkUrl.replace(/^https?:\/\/ahmedfawz\.github\.io\/?/, "");
-  var fullUrl = `https://ahmedfaw.github.io/${path}`;
-  console.log(path);
+  var domain = bookmarkUrl.replace(/^https?:\/\//, "");
+  var fullUrl = `https:\\${domain}`;
+  console.log(domain);
   console.log(bookmarkUrl);
   window.open(fullUrl, "_blank");
 }

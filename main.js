@@ -49,7 +49,9 @@ function displayBookmark(bookmarkContainer) {
     <tr>
     <td>${i + 1}</td>
     <td class="text-capitalize">${bookmarkContainer[i].name}</td>
-    <td><button onclick="visitBookmark(${i})" class="btn btn-info text-white"><i class="fa-solid fa-eye"></i> Visit</button></td>
+    <td><a href="//${
+      bookmarkContainer[i].url
+    }" target="_blank"><button class="btn bg-success text-white visit"> <i class="fa-regular fa-eye"></i> Visit</button></a></td>
     <td><button onclick="deleteBookmark(${i})" class="btn btn-danger text-white"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
     </tr>`;
     }
@@ -100,13 +102,11 @@ function deleteAll() {
 function visitBookmark(indexUrl) {
   var bookmarkUrl = bookmarkContainer[indexUrl].url;
   var domain = bookmarkUrl.replace(/^https?:\/\//, "");
-  var fullUrl = `https://${domain}`;
+  var fullUrl = `https:\\${domain}`;
   console.log(domain);
   console.log(bookmarkUrl);
   window.open(fullUrl, "_blank");
 }
-
-
 
 function validteNameBookmark(name) {
   var nameRegex = /^\w{3,}(\s+\w+)*$/;
